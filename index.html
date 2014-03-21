@@ -238,9 +238,10 @@ $('#gallery5').rebox({ selector: 'a' })
 	selector: null,        // the selector to delegate to, should be to the &lt;a&gt; which contains an &lt;img&gt;
 	prev: '&amp;larr;',        // use an image, text, whatever for the previous button
 	next: '&amp;rarr;',        // use an image, text, whatever for the next button
-	loading: '&amp;hellip;',   // use an image, text, whatever for the loading notification
+	loading: '%',          // use an image, text, whatever for the loading notification
 	close: '&amp;times;',      // use an image, text, whatever for the close button
 	speed: 600,            // speed to fade in or out
+	zIndex: 1000,          // zIndex to apply to the outer container
 	cycle: true,           // whether to cycle through galleries or stop at ends
 	captionAttr: 'title'   // name of the attribute to grab the caption from
 	template: 'image',     // the default template to be used (see templates below)

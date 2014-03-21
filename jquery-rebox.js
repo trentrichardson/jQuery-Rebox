@@ -21,9 +21,10 @@
 		selector: null,        // the selector to delegate to, should be to the <a> which contains an <img>
 		prev: '&larr;',        // use an image, text, whatever for the previous button
 		next: '&rarr;',        // use an image, text, whatever for the next button
-		loading: '&hellip;',   // use an image, text, whatever for the loading notification
+		loading: '%',          // use an image, text, whatever for the loading notification
 		close: '&times;',      // use an image, text, whatever for the close button
 		speed: 400,            // speed to fade in or out
+		zIndex: 1000,          // zIndex to apply to the outer container
 		cycle: true,           // whether to cycle through galleries or stop at ends
 		captionAttr: 'title',  // name of the attribute to grab the caption from
 		template: 'image',     // the default template to be used (see templates below)
@@ -56,7 +57,7 @@
 				t.$items = t.settings.selector === null? t.$el : t.$el.find(t.settings.selector);
 				if(isNaN(i)){
 					i = t.$items.index(i);
-				}				
+				}
 
 				// build the rebox
 				t.$box = $('<div class="'+ t.settings.theme +'" style="display:none;">'+
@@ -65,7 +66,7 @@
 							'<a href="#" class="'+ t.settings.theme +'-next '+ t.settings.theme +'-button">'+ t.settings.next +'</a>' +
 							'<div class="'+ t.settings.theme +'-contents"></div>'+
 							'<div class="'+ t.settings.theme +'-caption"><p></p></div>' +
-						'</div>').appendTo('body').fadeIn(t.settings.speed)						
+						'</div>').appendTo('body').css('zIndex',t.settings.zIndex).fadeIn(t.settings.speed)						
 						.on('click.rebox','.'+t.settings.theme +'-close', function(e){ e.preventDefault(); t.close(); })
 						.on('click.rebox','.'+t.settings.theme +'-next', function(e){ e.preventDefault(); t.next(); })
 						.on('click.rebox','.'+t.settings.theme +'-prev', function(e){ e.preventDefault(); t.prev(); });
