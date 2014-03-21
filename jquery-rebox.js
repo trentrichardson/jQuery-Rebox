@@ -1,5 +1,5 @@
 /*
- * jQuery Delegatebox
+ * jQuery Rebox [http://trentrichardson.com/examples/jQuery-Rebox]
  * By: Trent Richardson [http://trentrichardson.com]
  * 
  * Copyright 2014 Trent Richardson
