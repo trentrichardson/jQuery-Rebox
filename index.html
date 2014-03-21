@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+
+		<title>jQuery Rebox - jQuery or Zepto tiny small simple responsive lightbox</title>
+
+		<meta name="Description" content="jQuery Rebox - jQuery/Zepto lightbox that is small, simple, responsive, that delegates." />
+		<meta name="Keywords" content="jquery, Zepto, javascript, lightbox, responsive, small, tiny, mobile" />
+		
+		<style type="text/css"> 
+			body,img,p,h1,h2,h3,h4,h5,h6,form,table,td,ul,ol,li,dl,dt,dd,pre,blockquote,fieldset,label{
+				margin:0;
+				padding:0;
+				border:0;
+			}
+			body{ background-color: #f8f7ec; border-top: solid 10px #777; font: 90% Helvetica, sans-serif; padding: 20px; }
+			h1,h2,h3,h4{ margin: 10px 0; font-family: Plantin, "Plantin std", "Plantin", "Baskerville", Georgia, "Times New Roman", serif; font-weight: normal; }
+			h1{font-size: 2.2em;margin: 0 0 20px 0; }
+			h2{ background-color: #D95656; line-height: 18px; font-size: 18px; letter-spacing: 1px; padding: 5px 10px; margin: 10px 0 10px -60px; color: #fff; display: inline-block; border-radius: 4px; -moz-border-radius: 4px;-webkit-border-radius: 4px; }
+			h3{ color: #D95656; font-size: 18px; letter-spacing: 1px;  margin: 15px 0 15px -20px; }
+			h4{ color: #777; font-size: 18px; letter-spacing: 1px; }
+			p{ margin: 10px 0; line-height: 150%; }
+			a{ color: #7b94b2; }
+			ul,ol{ margin: 10px 0 10px 40px; }
+			li{ margin: 4px 0; }
+			dl{ margin: 10px 0; }
+			dl dt{ font-weight: bold; line-height: 20px; margin: 10px 0 0 0; }
+			dl dd{ margin: -20px 0 10px 120px; padding-bottom: 10px; border-bottom: solid 1px #eee;}
+			pre{ font-size: 12px; line-height: 16px; padding: 5px 5px 5px 10px; margin: 10px 0; border-left: solid 5px #9EC45F; overflow: auto; }
+
+			.wrapper{ background-color: #ffffff; width: 600px; border: solid 1px #eeeeee; padding: 20px 20px 20px 40px; margin: 0 auto; border-radius: 6px; -moz-border-radius: 6px;-webkit-border-radius: 6px; }
+			.header{ text-align: center;position: relative; margin: 0 -20px 0 -40px; }
+			.header ul{ margin: 10px 0; display: block; }
+			.header ul li{ display: inline-block; list-style: none; margin: 10px 0; width: 100px; }
+			.header ul li a{ text-transform: uppercase; color: #777; text-decoration: none; font-size: 12px; }
+			.header ul li a:hover{ color: #555; }
+			.header .tour{ color: #fff; background-color: #9ec45f; padding: 4px 10px; margin: 10px 0; font-size: 18px; line-height: 18px; text-decoration: none;border-radius: 4px; -moz-border-radius: 4px;-webkit-border-radius: 4px;}
+			.header .tour:hover{ background-color: #8eb44f; }
+			.header ul.scrollnav{ position: fixed; top: 0px; left: 50%; background-color: #777; display: none; margin: 0 0 0 -185px; border-radius: 0 0 0 6px; -moz-border-radius: 0 0 0 6px;-webkit-border-radius: 0 0 0 6px;}
+			.header ul.scrollnav li a{ color: #fff; }
+			.header ul.scrollnav.scrolled{ display: inline; }
+			.clear{ clear: both; }
+
+			.gallery{}
+			.gallery img{ width: 24%; }
+		</style>
+		
+		<link rel="stylesheet" media="all" type="text/css" href="jquery-rebox.css" />		
+
+	</head>
+
+	<body>
+		<div class="wrapper">
+			<div class="header">
+				<h1>jQuery/Zepto Rebox - jQuery or Zepto tiny small simple responsive lightbox</h1>
+
+				<ul class="nav">
+					<li><a href="#Get_Started" title="Get Started">Get Started</a></li>
+					<li><a href="#Examples" title="Examples">Examples</a></li>
+					<li><a href="#Options" title="Options">Options</a></li>
+					<li><a href="#Methods" title="Methods">Methods</a></li>
+					<li><a href="#Events" title="Events">Events</a></li>
+				</ul>
+		
+			</div>
+
+			<div class="content">
+
+				<h2 id="Get_Started">Get Started</h2>
+					
+					<h3>Highly Recommended</h3>
+					<p>Subscribe to <a href="http://trentrichardson.com/category/impromptu/" title="TrentRichardson.com">my newsletter</a> and follow me <a href="http://twitter.com/practicalweb" title="Follow me on Twitter">@practicalweb</a>.</p>
+					
+					<p>Ever need a lean, simple, quick lightbox for images that is responsive, pretty, includes captions? jQuery Rebox is a Responsive Lightbox that is small, easy, lightbox that uses delegation, so you can add and remove to the gallery and not have to reinitialize.</p>
+					<p>Instead of using a rediculous amount of javascript to restrict image sizes within the window, Rebox uses css max-width.  This keeps the library clean, and simple.</p>
+					<p>Zepto may also be used, but you need to include fx and fx_methods outside of the basic build.  Also if you want touch swipe guestures include the touch module.  I suggest using <a href="http://github.e-sites.nl/zeptobuilder/" title="Zepto Builder">Zepto Builder</a> to create a clean build.</p>
+
+					<h3>Donation</h3>
+					
+					<p>Has Rebox been helpful to you?</p>
+					<div class="donation">					
+						<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+						<input type="hidden" name="cmd" value="_s-xclick">
+						<input type="hidden" name="hosted_button_id" value="ZBNQYNC8VHBBS">
+						<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+						<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+						</form>
+					</div>
+					
+					<h3 id="Download">Download</h3>
+					<ul>
+						<li><a href="https://github.com/trentrichardson/jQuery-Rebox" title="Fork it on Github">Download or Fork on Github</a></li>
+					</ul>
+
+					<h3>Version</h3>
+					<p>Version 0.1</p>
+					<p>Last updated on 03/20/2014</p>
+
+					<p>jQuery Rebox is currently available for use in all personal or commercial projects under MIT license.</p>
+					<ul>
+						<li><a href="http://trentrichardson.com/Impromptu/MIT-LICENSE.txt" title="MIT License">MIT License</a></li>
+					</ul>
+
+				<h2 id="Examples">Examples</h2>
+
+				
+						<!-- ============= example -->
+						<div class="example-container">
+							<h3>Single Initialization</h3>
+							<p>Create a single lightbox, individually on each image:</p>
+							<div>
+						 		<div id="gallery1" class="gallery">
+						 			<a href="img/sample_a.jpg" title="Caption for image A"><img src="img/sample_a_thumb.jpg" /></a>
+						 			<a href="img/sample_b.jpg" title="Caption for image B"><img src="img/sample_b_thumb.jpg" /></a>
+						 			<a href="img/sample_c.jpg" title="Caption for image C"><img src="img/sample_c_thumb.jpg" /></a>
+						 			<a href="img/sample_d.jpg" title="Caption for image D"><img src="img/sample_d_thumb.jpg" /></a>
+						 		</div>
+							</div>
+<pre class="ex code" data-lllanguage="js">
+$('#gallery1 a').rebox();
+</pre>
+						</div>
+
+						<!-- ============= example -->
+						<div class="example-container">
+							<h3>Gallery Initialization</h3>
+							<p>Create a gallery style lightbox:</p>
+							<div>
+						 		<div id="gallery2" class="gallery">
+						 			<a href="img/sample_a.jpg" title="Caption for image A"><img src="img/sample_a_thumb.jpg" /></a>
+						 			<a href="img/sample_b.jpg" title="Caption for image B"><img src="img/sample_b_thumb.jpg" /></a>
+						 			<a href="img/sample_c.jpg" title="Caption for image C"><img src="img/sample_c_thumb.jpg" /></a>
+						 			<a href="img/sample_d.jpg" title="Caption for image D"><img src="img/sample_d_thumb.jpg" /></a>
+						 		</div>
+							</div>
+<pre class="ex code" data-lllanguage="js">
+$('#gallery2').rebox({ selector: 'a' });
+</pre >
+						</div>
+
+						<!-- ============= example -->
+						<div class="example-container">
+							<h3>Dynamically add images after the fact</h3>
+							<p>During page interactions you can add to your container element and new images will be pickedup (But not during an open modal):</p>
+							<div>
+						 		<div id="gallery3" class="gallery">
+						 		</div>
+						 		<a href="#" id="gallery3Add">Add an image</a>
+							</div>
+<pre class="ex code" data-lllanguage="js">
+$('#gallery3').rebox({ selector: 'a' });
+
+// don't worry about the following, it just injects a new img..
+var counter = 0;
+$('#gallery3Add').on('click', function(e){
+	e.preventDefault();
+	var images = ['a','b','c','d'],
+		letter = images[counter++ % images.length];
+	$('#gallery3').append(
+		'&lt;a href="img/sample_'+ letter +'.jpg" title="Image '+ letter +'"&gt;'+
+			'&lt;img src="img/sample_'+ letter +'_thumb.jpg" /&gt;'+
+		'&lt;/a&gt; '
+		);
+});
+</pre >
+						</div>
+
+						<!-- ============= example -->
+						<div class="example-container">
+							<h3>Custom Content</h3>
+							<p>Using templates you can show images, videos, or anything.  By default only the "image" template is implemented.</p>
+							<p>First you need to add a template type.  Each type is a function that is passed the current item that needs to be shown (the thumb image), current Rebox settings, and a callback you must call when your new jquery object is created.  The scope of the callback must be this new element.  If you want the callback to execute immediately just use jquery's .each().</p>
+							<p>Next on your gallery links you need to set the template to use with the data attribute: data-rebox-template="video" By default all .</p>
+							<p>Using this function approach to templates you're able to do your post creation work to the new content when needed.</p>
+							<div>
+						 		<div id="gallery4" class="gallery">
+						 			<a href="img/sample_a.jpg" title="Caption for image A" data-rebox-template="video"><img src="img/sample_a_thumb.jpg" /></a>
+						 		</div>
+							</div>
+<pre class="ex code" data-lllanguage="js">
+/*
+&lt;div id="gallery4" class="gallery"&gt;
+	&lt;a href="img/sample_a.jpg" data-rebox-template="video" title="Caption for image A"&gt;
+		&lt;img src="img/sample_a_thumb.jpg" /&gt;
+	&lt;/a&gt;
+&lt;/div&gt;
+*/
+$('#gallery4 a').rebox({
+	templates:{
+		video: function($item, settings, callback){
+			return $('&lt;video id="example_video_1" class="'+ settings.theme +'-content" controls preload="auto" '+
+  						'poster="http://video-js.zencoder.com/oceans-clip.png"&gt;'+
+					'&lt;source src="http://video-js.zencoder.com/oceans-clip.mp4" type="video/mp4" /&gt;'+
+					'&lt;source src="http://video-js.zencoder.com/oceans-clip.webm" type="video/webm" /&gt;'+
+					'&lt;source src="http://video-js.zencoder.com/oceans-clip.ogv" type="video/ogg" /&gt;'+
+					'&lt;/video&gt;').on('loadeddata', callback);
+		}
+	}
+});
+</pre>
+						</div>
+
+						<!-- ============= example -->
+						<div class="example-container">
+							<h3>Events Example</h3>
+							<p>Click through the gallery with your console open to view the events:</p>
+							<div>
+						 		<div id="gallery5" class="gallery">
+						 			<a href="img/sample_a.jpg" title="Caption for image A"><img src="img/sample_a_thumb.jpg" /></a>
+						 			<a href="img/sample_b.jpg" title="Caption for image B"><img src="img/sample_b_thumb.jpg" /></a>
+						 			<a href="img/sample_c.jpg" title="Caption for image C"><img src="img/sample_c_thumb.jpg" /></a>
+						 			<a href="img/sample_d.jpg" title="Caption for image D"><img src="img/sample_d_thumb.jpg" /></a>
+						 		</div>
+							</div>
+<pre class="ex code" data-lllanguage="js">
+$('#gallery5').rebox({ selector: 'a' })
+	.on('rebox:open', function(e, rx){ console.log(e.type, rx); })
+	.on('rebox:close', function(e, rx){ console.log(e.type, rx); })
+	.on('rebox:goto', function(e, rx, i, $item, $img){ console.log(e.type, rx, i, $item, $img); });
+</pre >
+						</div>
+
+
+
+
+				<h2 id="Options">The Options</h2>
+
+<pre class="code" data-lllanguage="js">
+{
+	theme: 'rebox',        // class name parent gets (for your css)
+	selector: null,        // the selector to delegate to, should be to the &lt;a&gt; which contains an &lt;img&gt;
+	prev: '&amp;larr;',        // use an image, text, whatever for the previous button
+	next: '&amp;rarr;',        // use an image, text, whatever for the next button
+	loading: '&amp;hellip;',   // use an image, text, whatever for the loading notification
+	close: '&amp;times;',      // use an image, text, whatever for the close button
+	speed: 600,            // speed to fade in or out
+	cycle: true,           // whether to cycle through galleries or stop at ends
+	captionAttr: 'title'   // name of the attribute to grab the caption from
+	template: 'image',     // the default template to be used (see templates below)
+	templates: {           // define templates to create the elements you need function($item, settings)
+		image: function($item, settings, callback){ 
+			return $('&lt;img src="'+ $item.attr('href') +'" class="'+ s.theme +'-content" /&gt;').load(callback);
+		}
+	}
+}
+</pre>
+
+				<h2 id="Methods">The Methods</h2>
+
+<pre class="code" data-lllanguage="js">
+// Initialize a rebox instance
+$el.rebox({});
+
+// Enable a rebox, generally you don't have to call this
+// but if you want to enable and disable this could be useful
+$el.rebox('enable');
+
+// Disable a rebox. Again you generally don't need this
+// but if you want to enable and disable this could be useful
+$el.rebox('disable');
+
+// Go to the next image in the queue
+$el.rebox('next');
+
+// Go to the prev image in the queue
+$el.rebox('prev');
+
+// Go to a specific index in the queue
+$el.rebox('goto', 4);
+
+// Destroy a rebox
+$el.rebox('destroy');
+
+// Get or set an option. When value is provided a Set takes place
+// If only the key is provided the value will be retrieved
+$el.rebox('option', key, value);
+
+// if an object is passed each setting will be applied
+$el.rebox('option', { speed: 500 });
+
+// set global defaults
+$.rebox.setDefaults({ theme: 'mytheme' });
+</pre>
+				
+				<h2 id="Events">The Events</h2>
+<pre class="code" data-lllanguage="js">
+// when the control is opened
+$el.bind('rebox:open', function(e){});
+
+// when the control is closed
+$el.bind('rebox:close', function(e){});
+
+// when the control changes image, passes the index as second parameter
+$el.bind('rebox:goto', function(e, i){});
+
+// when the control is disabled
+$el.bind('rebox:disable', function(e){});
+
+// when the control is destroyed
+$el.bind('rebox:destroy', function(e){});
+</pre>
+
+			</div>
+		</div>
+
+		<script type="text/javascript" src="lib/jquery.min.js"></script>
+		<!-- <script type="text/javascript" src="lib/zepto.min.js"></script> -->
+		<script type="text/javascript" src="lib/jquery-litelighter.js"></script>
+		<script type="text/javascript" src="jquery-rebox.js"></script>
+
+		<script type="text/javascript">
+
+			$(document).ready(function(){
+				// quick routine for scrolling nav
+				var $nav = $('.header ul'),
+					navoffset = $nav.offset(),
+					$navclone = $nav.clone().addClass('scrollnav').appendTo('.header'),
+					$window = $(window);
+				$window.scroll(function(e){
+					if((navoffset.top+50) < $window.scrollTop()){
+						if(!$navclone.hasClass('scrolled'))
+							$navclone.addClass('scrolled');
+					}
+					else $navclone.removeClass('scrolled');
+				}).scroll();
+
+				// highlight the code
+				$('pre.code').litelighter();
+
+				// run the examples
+				$('.example-container > pre.ex').each(function(i){
+					eval($(this).data('llcode'));
+				});
+			});
+		</script>
+
+		<script type="text/javascript"> /*
+		var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+		document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+		*/</script> 
+		<script type="text/javascript"> /*
+		try {
+		var pageTracker = _gat._getTracker("UA-7602218-1");
+		pageTracker._trackPageview();
+		} catch(err) {}*/</script>
+
+	</body>
+</html>
