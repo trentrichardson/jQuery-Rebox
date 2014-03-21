@@ -53,7 +53,7 @@
 	<body>
 		<div class="wrapper">
 			<div class="header">
-				<h1>jQuery/Zepto Rebox - jQuery or Zepto tiny small simple responsive lightbox</h1>
+				<h1>Rebox - jQuery or Zepto tiny small simple responsive lightbox</h1>
 
 				<ul class="nav">
 					<li><a href="#Get_Started" title="Get Started">Get Started</a></li>
@@ -67,15 +67,16 @@
 
 			<div class="content">
 
+				<p>Ever need a lean, simple, quick lightbox for images that is responsive, delegates, pretty, no required images, includes captions? jQuery Rebox is a Responsive Lightbox that is small, easy, lightbox that uses delegation, so you can add and remove to the gallery and not have to reinitialize.</p>
+				<p>Instead of using a rediculous amount of javascript to restrict image sizes within the window, Rebox uses css max-width.  The design requires no images, although if you want to reskin it you can.  This keeps the library clean, and simple.</p>
+				<p>Zepto may also be used, but you need to include fx and fx_methods outside of the basic build.  Also if you want touch swipe guestures include the touch module.  I suggest using <a href="http://github.e-sites.nl/zeptobuilder/" title="Zepto Builder">Zepto Builder</a> to create a clean build.</p>
+
 				<h2 id="Get_Started">Get Started</h2>
 					
+
 					<h3>Highly Recommended</h3>
 					<p>Subscribe to <a href="http://trentrichardson.com/category/impromptu/" title="TrentRichardson.com">my newsletter</a> and follow me <a href="http://twitter.com/practicalweb" title="Follow me on Twitter">@practicalweb</a>.</p>
 					
-					<p>Ever need a lean, simple, quick lightbox for images that is responsive, pretty, includes captions? jQuery Rebox is a Responsive Lightbox that is small, easy, lightbox that uses delegation, so you can add and remove to the gallery and not have to reinitialize.</p>
-					<p>Instead of using a rediculous amount of javascript to restrict image sizes within the window, Rebox uses css max-width.  This keeps the library clean, and simple.</p>
-					<p>Zepto may also be used, but you need to include fx and fx_methods outside of the basic build.  Also if you want touch swipe guestures include the touch module.  I suggest using <a href="http://github.e-sites.nl/zeptobuilder/" title="Zepto Builder">Zepto Builder</a> to create a clean build.</p>
-
 					<h3>Donation</h3>
 					
 					<p>Has Rebox been helpful to you?</p>
@@ -92,6 +93,7 @@
 					<ul>
 						<li><a href="https://github.com/trentrichardson/jQuery-Rebox" title="Fork it on Github">Download or Fork on Github</a></li>
 					</ul>
+					<p>Just include the js and css file along with either Zepto or jQuery.  After that you're all set for the examples below!</p>
 
 					<h3>Version</h3>
 					<p>Version 0.1</p>
@@ -335,15 +337,16 @@ $el.bind('rebox:destroy', function(e){});
 			});
 		</script>
 
-		<script type="text/javascript"> /*
+		<!--
+		<script type="text/javascript">
 		var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
 		document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-		*/</script> 
-		<script type="text/javascript"> /*
+		</script> 
+		<script type="text/javascript">
 		try {
 		var pageTracker = _gat._getTracker("UA-7602218-1");
 		pageTracker._trackPageview();
-		} catch(err) {}*/</script>
-
+		} catch(err) {}</script>
+		-->
 	</body>
 </html>
