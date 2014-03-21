@@ -23,7 +23,7 @@
 		next: '&rarr;',        // use an image, text, whatever for the next button
 		loading: '&hellip;',   // use an image, text, whatever for the loading notification
 		close: '&times;',      // use an image, text, whatever for the close button
-		speed: 600,            // speed to fade in or out
+		speed: 400,            // speed to fade in or out
 		cycle: true,           // whether to cycle through galleries or stop at ends
 		captionAttr: 'title',  // name of the attribute to grab the caption from
 		template: 'image',     // the default template to be used (see templates below)

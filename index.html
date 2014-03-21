@@ -117,10 +117,10 @@
 							<p>Create a single lightbox, individually on each image:</p>
 							<div>
 						 		<div id="gallery1" class="gallery">
-						 			<a href="img/sample_a.jpg" title="Caption for image A"><img src="img/sample_a_thumb.jpg" /></a>
-						 			<a href="img/sample_b.jpg" title="Caption for image B"><img src="img/sample_b_thumb.jpg" /></a>
-						 			<a href="img/sample_c.jpg" title="Caption for image C"><img src="img/sample_c_thumb.jpg" /></a>
-						 			<a href="img/sample_d.jpg" title="Caption for image D"><img src="img/sample_d_thumb.jpg" /></a>
+						 			<a href="media/sample_a.jpg" title="Caption for image A"><img src="media/sample_a_thumb.jpg" /></a>
+						 			<a href="media/sample_b.jpg" title="Caption for image B"><img src="media/sample_b_thumb.jpg" /></a>
+						 			<a href="media/sample_c.jpg" title="Caption for image C"><img src="media/sample_c_thumb.jpg" /></a>
+						 			<a href="media/sample_d.jpg" title="Caption for image D"><img src="media/sample_d_thumb.jpg" /></a>
 						 		</div>
 							</div>
 <pre class="ex code" data-lllanguage="js">
@@ -134,10 +134,10 @@ $('#gallery1 a').rebox();
 							<p>Create a gallery style lightbox:</p>
 							<div>
 						 		<div id="gallery2" class="gallery">
-						 			<a href="img/sample_a.jpg" title="Caption for image A"><img src="img/sample_a_thumb.jpg" /></a>
-						 			<a href="img/sample_b.jpg" title="Caption for image B"><img src="img/sample_b_thumb.jpg" /></a>
-						 			<a href="img/sample_c.jpg" title="Caption for image C"><img src="img/sample_c_thumb.jpg" /></a>
-						 			<a href="img/sample_d.jpg" title="Caption for image D"><img src="img/sample_d_thumb.jpg" /></a>
+						 			<a href="media/sample_a.jpg" title="Caption for image A"><img src="media/sample_a_thumb.jpg" /></a>
+						 			<a href="media/sample_b.jpg" title="Caption for image B"><img src="media/sample_b_thumb.jpg" /></a>
+						 			<a href="media/sample_c.jpg" title="Caption for image C"><img src="media/sample_c_thumb.jpg" /></a>
+						 			<a href="media/sample_d.jpg" title="Caption for image D"><img src="media/sample_d_thumb.jpg" /></a>
 						 		</div>
 							</div>
 <pre class="ex code" data-lllanguage="js">
@@ -164,8 +164,8 @@ $('#gallery3Add').on('click', function(e){
 	var images = ['a','b','c','d'],
 		letter = images[counter++ % images.length];
 	$('#gallery3').append(
-		'&lt;a href="img/sample_'+ letter +'.jpg" title="Image '+ letter +'"&gt;'+
-			'&lt;img src="img/sample_'+ letter +'_thumb.jpg" /&gt;'+
+		'&lt;a href="media/sample_'+ letter +'.jpg" title="Image '+ letter +'"&gt;'+
+			'&lt;img src="media/sample_'+ letter +'_thumb.jpg" /&gt;'+
 		'&lt;/a&gt; '
 		);
 });
@@ -181,25 +181,25 @@ $('#gallery3Add').on('click', function(e){
 							<p>Using this function approach to templates you're able to do your post creation work to the new content when needed.</p>
 							<div>
 						 		<div id="gallery4" class="gallery">
-						 			<a href="img/sample_a.jpg" title="Caption for image A" data-rebox-template="video"><img src="img/sample_a_thumb.jpg" /></a>
+						 			<a href="media/video_racing.webm" title="A racing video" data-rebox-template="video"><img src="media/video_racing_thumb.jpg" /></a>
 						 		</div>
 							</div>
 <pre class="ex code" data-lllanguage="js">
 /*
 &lt;div id="gallery4" class="gallery"&gt;
-	&lt;a href="img/sample_a.jpg" data-rebox-template="video" title="Caption for image A"&gt;
-		&lt;img src="img/sample_a_thumb.jpg" /&gt;
+	&lt;a href="media/sample_a.jpg" data-rebox-template="video" title="Caption for image A"&gt;
+		&lt;img src="media/sample_a_thumb.jpg" /&gt;
 	&lt;/a&gt;
 &lt;/div&gt;
 */
 $('#gallery4 a').rebox({
 	templates:{
 		video: function($item, settings, callback){
-			return $('&lt;video id="example_video_1" class="'+ settings.theme +'-content" controls preload="auto" '+
-  						'poster="http://video-js.zencoder.com/oceans-clip.png"&gt;'+
-					'&lt;source src="http://video-js.zencoder.com/oceans-clip.mp4" type="video/mp4" /&gt;'+
-					'&lt;source src="http://video-js.zencoder.com/oceans-clip.webm" type="video/webm" /&gt;'+
-					'&lt;source src="http://video-js.zencoder.com/oceans-clip.ogv" type="video/ogg" /&gt;'+
+			var url = $item.attr('href').replace(/\.\w+$/,'');
+			return $('&lt;video class="'+ settings.theme +'-content" controls preload="auto" '+
+  						'poster="'+url+'.jpg"&gt;'+
+					'&lt;source src="'+url+'.webm" type="video/webm" /&gt;'+
+					'&lt;source src="'+url+'.mp4" type="video/mp4" /&gt;'+
 					'&lt;/video&gt;').on('loadeddata', callback);
 		}
 	}
@@ -213,10 +213,10 @@ $('#gallery4 a').rebox({
 							<p>Click through the gallery with your console open to view the events:</p>
 							<div>
 						 		<div id="gallery5" class="gallery">
-						 			<a href="img/sample_a.jpg" title="Caption for image A"><img src="img/sample_a_thumb.jpg" /></a>
-						 			<a href="img/sample_b.jpg" title="Caption for image B"><img src="img/sample_b_thumb.jpg" /></a>
-						 			<a href="img/sample_c.jpg" title="Caption for image C"><img src="img/sample_c_thumb.jpg" /></a>
-						 			<a href="img/sample_d.jpg" title="Caption for image D"><img src="img/sample_d_thumb.jpg" /></a>
+						 			<a href="media/sample_a.jpg" title="Caption for image A"><img src="media/sample_a_thumb.jpg" /></a>
+						 			<a href="media/sample_b.jpg" title="Caption for image B"><img src="media/sample_b_thumb.jpg" /></a>
+						 			<a href="media/sample_c.jpg" title="Caption for image C"><img src="media/sample_c_thumb.jpg" /></a>
+						 			<a href="media/sample_d.jpg" title="Caption for image D"><img src="media/sample_d_thumb.jpg" /></a>
 						 		</div>
 							</div>
 <pre class="ex code" data-lllanguage="js">

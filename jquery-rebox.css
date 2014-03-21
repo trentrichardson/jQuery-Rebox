@@ -8,13 +8,13 @@
 .rebox-caption { display: none; position: absolute; left: 0; bottom: 0; width: 100%; text-align: center; z-index: 1000; background: #000; background: rgba(0,0,0,0.7); }
 .rebox-caption p { margin: 0 auto; max-width: 70%; display: inline-block; *display: inline; *zoom: 1; padding: 10px; color: #fff; font-size: 12px; line-height: 18px; }
 
-.rebox-button { position: absolute; z-index: 9999; min-width: 32px; height: 32px; line-height: 32px; background: rgb(0, 0, 0); opacity:0.4; 
-	text-decoration: none; font-size: 24px; color: #fff; text-align: center; vertical-align: bottom;
+.rebox-button { position: absolute; z-index: 9999; min-width: 40px; height: 25px; line-height: 1px; padding: 25px 5px 0 5px; background: rgb(0, 0, 0); opacity:0.4; 
+	text-decoration: none; font-size: 24px; color: #fff; text-align: center; vertical-align: top;
 	-webkit-border-radius: 32px; -moz-border-radius: 32px; -ms-border-radius: 32px; border-radius: 32px;
 	-webkit-transition: all 0.3s; -moz-transition: all 0.3s; -ms-transition: all 0.3s; transition: all 0.3s; }
 .rebox-button:hover,
 .rebox-button:focus { opacity: 1; -webkit-transform: scale(1.4); -moz-transform: scale(1.4); -ms-transform: scale(1.4); transform: scale(1.4); }
-.rebox-close { right: 10px; top: 10px; line-height: 28px; }
+.rebox-close { right: 10px; top: 10px; padding: 20px 3px 0 3px; }
 .rebox-next { right: 10px; top: 48%; }
 .rebox-prev { left: 10px; top: 48%; }
 .rebox-loading { left: 50%; top: 48%; line-height: 20px;
