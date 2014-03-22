@@ -196,10 +196,11 @@ $('#gallery4 a').rebox({
 	templates:{
 		video: function($item, settings, callback){
 			var url = $item.attr('href').replace(/\.\w+$/,'');
-			return $('&lt;video class="'+ settings.theme +'-content" controls preload="auto" '+
-  						'poster="'+url+'.jpg"&gt;'+
-					'&lt;source src="'+url+'.webm" type="video/webm" /&gt;'+
-					'&lt;source src="'+url+'.mp4" type="video/mp4" /&gt;'+
+			return $('&lt;video class="'+ settings.theme +'-content" controls preload="metadata" '+
+  							'poster="'+url+'.jpg"&gt;'+
+						'&lt;source src="'+url+'.webm" type="video/webm" /&gt;'+
+						'&lt;source src="'+url+'.mp4" type="video/mp4" /&gt;'+
+						'Your browser does not support the HTML5 video tag'+
 					'&lt;/video&gt;').on('loadeddata', callback);
 		}
 	}
