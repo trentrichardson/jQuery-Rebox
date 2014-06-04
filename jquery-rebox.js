@@ -94,7 +94,7 @@
 				if(t.$box && t.$box.length){
 					t.$box.fadeOut(t.settings.speed, function(e){
 						t.$box.remove();
-						t.box = null;
+						t.$box = null;
 						t.$el.trigger('rebox:close',[t]);
 					});
 				}
