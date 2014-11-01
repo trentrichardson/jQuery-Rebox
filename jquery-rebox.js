@@ -69,7 +69,16 @@
 						'</div>').appendTo('body').css('zIndex',t.settings.zIndex).fadeIn(t.settings.speed)						
 						.on('click.rebox','.'+t.settings.theme +'-close', function(e){ e.preventDefault(); t.close(); })
 						.on('click.rebox','.'+t.settings.theme +'-next', function(e){ e.preventDefault(); t.next(); })
-						.on('click.rebox','.'+t.settings.theme +'-prev', function(e){ e.preventDefault(); t.prev(); });
+						.on('click.rebox','.'+t.settings.theme +'-prev', function(e){ e.preventDefault(); t.prev(); })
+						.on('click.rebox','.'+t.settings.theme +'-contents', function(e){
+							e.preventDefault();
+							// if the content is clicked, go to the next, otherwise close
+							if($(e.target).hasClass(t.settings.theme +'-content') && t.$items.length > 1){
+								t.next();
+							}else{
+								t.close();
+							}
+						});
 
 				// add some key hooks
 				$(document).on('swipeLeft.rebox', function(e){ t.next(); })
