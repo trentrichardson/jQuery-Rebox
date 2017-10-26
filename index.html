@@ -7,8 +7,8 @@
 
 		<meta name="Description" content="jQuery Rebox - jQuery/Zepto lightbox that is small, simple, responsive, mobile friendly, that delegates." />
 		<meta name="Keywords" content="jquery, Zepto, javascript, lightbox, responsive, small, tiny, mobile" />
-		
-		<style type="text/css"> 
+
+		<style type="text/css">
 			body,img,p,h1,h2,h3,h4,h5,h6,form,table,td,ul,ol,li,dl,dt,dd,pre,blockquote,fieldset,label{
 				margin:0;
 				padding:0;
@@ -45,8 +45,8 @@
 			.gallery{}
 			.gallery img{ width: 24%; }
 		</style>
-		
-		<link rel="stylesheet" media="all" type="text/css" href="jquery-rebox.css" />		
+
+		<link rel="stylesheet" media="all" type="text/css" href="jquery-rebox.css" />
 
 	</head>
 
@@ -62,28 +62,28 @@
 					<li><a href="#Methods" title="Methods">Methods</a></li>
 					<li><a href="#Events" title="Events">Events</a></li>
 				</ul>
-		
+
 			</div>
 
 			<div class="content">
 
-				<p>Ever need a lean, simple, quick lightbox for images that is responsive, delegates, pretty, no required images, includes 
-					captions? That is exactly what Rebox does.  Instead of using a rediculous amount of javascript to restrict image sizes 
-					within the window, Rebox uses css max-width.  The design requires no images, although if you want to reskin it you can.  
+				<p>Ever need a lean, simple, quick lightbox for images that is responsive, delegates, pretty, no required images, includes
+					captions? That is exactly what Rebox does.  Instead of using a rediculous amount of javascript to restrict image sizes
+					within the window, Rebox uses css max-width.  The design requires no images, although if you want to reskin it you can.
 					This keeps the library clean, and simple.</p>
 
 				<p>The final thing you should know.. Rebox comes from REsponsive lightBOX.</p>
-				
+
 				<h2 id="Get_Started">Get Started</h2>
-					
+
 
 					<h3>Highly Recommended</h3>
 					<p>Subscribe to <a href="http://trentrichardson.com/category/impromptu/" title="TrentRichardson.com">my newsletter</a> and follow me <a href="http://twitter.com/practicalweb" title="Follow me on Twitter">@practicalweb</a>.</p>
-					
+
 					<h3>Donation</h3>
-					
+
 					<p>Has Rebox been helpful to you?</p>
-					<div class="donation">					
+					<div class="donation">
 						<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
 						<input type="hidden" name="cmd" value="_s-xclick">
 						<input type="hidden" name="hosted_button_id" value="ZBNQYNC8VHBBS">
@@ -91,14 +91,14 @@
 						<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
 						</form>
 					</div>
-					
+
 					<h3 id="Download">Download</h3>
 					<ul>
 						<li><a href="https://github.com/trentrichardson/jQuery-Rebox" title="Fork it on Github">Download or Fork on Github</a></li>
 					</ul>
 					<p>Just include the js and css file along with either Zepto or jQuery.  After that you're all set for the examples below!</p>
 					<p>When using Zepto you need to include fx and fx_methods outside of the basic build.  Also if you want touch swipe guestures include the touch module.  I suggest using <a href="http://github.e-sites.nl/zeptobuilder/" title="Zepto Builder">Zepto Builder</a> to create a clean build.</p>
-				
+
 					<h3>Version</h3>
 					<p>Version 0.1</p>
 					<p>Last updated on 03/20/2014</p>
@@ -110,7 +110,7 @@
 
 				<h2 id="Examples">Examples</h2>
 
-				
+
 						<!-- ============= example -->
 						<div class="example-container">
 							<h3>Single Initialization</h3>
@@ -247,7 +247,7 @@ $('#gallery5').rebox({ selector: 'a' })
 	captionAttr: 'title'   // name of the attribute to grab the caption from
 	template: 'image',     // the default template to be used (see templates below)
 	templates: {           // define templates to create the elements you need function($item, settings)
-		image: function($item, settings, callback){ 
+		image: function($item, settings, callback){
 			return $('&lt;img src="'+ $item.attr('href') +'" class="'+ s.theme +'-content" /&gt;').load(callback);
 		}
 	}
@@ -290,7 +290,7 @@ $el.rebox('option', { speed: 500 });
 // set global defaults
 $.rebox.setDefaults({ theme: 'mytheme' });
 </pre>
-				
+
 				<h2 id="Events">The Events</h2>
 <pre class="code" data-lllanguage="js">
 // when the control is opened
@@ -347,7 +347,7 @@ $el.bind('rebox:destroy', function(e){});
 		<script type="text/javascript">
 		var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
 		document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-		</script> 
+		</script>
 		<script type="text/javascript">
 		try {
 		var pageTracker = _gat._getTracker("UA-7602218-1");
